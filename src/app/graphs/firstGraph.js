@@ -2,8 +2,18 @@ import React, { useContext } from 'react';
 // import { store } from "../store";
 import ReactEcharts from "echarts-for-react";
 
+import arryData from './data.json'
+
 export default function FirstGraph(){
+    let arry=arryData.arryList;
+    var arr=[];
+    for(var x in arry)
+    {
+        arr.push(arry[x]);
+    }
     const getOption = () => {
+        console.log(arry);
+        console.log(arr);
         return {
             xAxis: {
                 type: 'category',
@@ -13,7 +23,7 @@ export default function FirstGraph(){
                 type: 'value'
             },
             series: [{
-                data: [120, 200, 150, 80, 70, 110, 130],
+                data: arr,
                 type: 'bar',
                 showBackground: true,
                 backgroundStyle: {
