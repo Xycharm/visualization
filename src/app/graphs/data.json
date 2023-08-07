@@ -1,26 +1,8 @@
-{
-    "arryList":[
-        {
-            "Mon": 100
-        },
-        {
-            "Tue": 200
-        },
-        {
-            "Wed": 300
-        },
-        {
-            "Thu": 400
-        },
-        {
-            "Fri": 100
-        },
-        {
-            "Sat": 100
-        },
-        {
-            "Sun": 1000
-        }
+ [
+        {"time": "Jan","member":2.0,"casual":2.6},
+        {"time": "Feb","member":4.9,"casual":5.9},
+        {"time": "Mar","member":7.0,"casual":9.0},
+        {"time": "Apr","member":23.2,"casual":26.4},
+        {"time": "May","member":25.6,"casual":28.7},
+        {"time": "Jun","member":76.7,"casual":70.7}
     ]
-
-}

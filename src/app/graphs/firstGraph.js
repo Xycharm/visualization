@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
+import Data from './data.json'
 
 export default function FirstGraph(){
     const getOption = () => {
@@ -24,11 +25,13 @@ export default function FirstGraph(){
                 }
             },
             calculable: true,
+            dataset:{
+                dimensions:['time','member','casual'],
+                source:Data
+            },
             xAxis: [
                 {
                   type: 'category',
-                  // 下面填小时
-                  data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                 }
             ],
             yAxis: [
@@ -41,20 +44,11 @@ export default function FirstGraph(){
                   color: '#a90000',
                   name: 'member',
                   type: 'bar',
-                  //下面填会员人数
-                  data: [
-                    2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
-                  ],
                 },
-
                 {
-                  name: 'casual',
+                    name: 'casual',
                   type: 'bar',
-                  //下面填散客人数
-                  data: [
-                    2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
-                  ],
-                }
+                },
             ]
         };
     };
