@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
-import Data from './data.json'
+import Data from './firstGraphData.json'
 
 export default function FirstGraph(){
     const getOption = () => {
@@ -24,7 +24,6 @@ export default function FirstGraph(){
                   saveAsImage: { show: false }//保存为图像：关
                 }
             },
-            calculable: true,
             dataset:{
                 dimensions:['time','member','casual'],
                 source:Data
@@ -54,6 +53,7 @@ export default function FirstGraph(){
     };
 
     return <div>
+        <br />
         <ReactEcharts option={getOption()} />
     </div>
     

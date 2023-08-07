@@ -24,7 +24,6 @@ export default function Home() {
       </div>
 
       <div className={styles.secondGraph}>
-        这里展示骑行时间的分布
         <SecondGraph />
       </div>
 

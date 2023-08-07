@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
+import Data from './secondGraphData.json'
 
 export default function SecondGraph(){
   const getOption = () => {
     return {
       title: {
-        text: 'Stacked Line'
+        text: '骑行时间分布'
       },
       tooltip: {
         trigger: 'axis'
@@ -28,10 +29,13 @@ export default function SecondGraph(){
           saveAsImage: { show: false }//保存为图像：开
         }
       },
+      dataset:{
+        dimensions:['time','member','casual'],
+        source:Data
+      },
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [1, 2, 3, 4, 5, 6, 7]//这里放小时数
       },
       yAxis: {
         type: 'value'
@@ -40,19 +44,18 @@ export default function SecondGraph(){
         {
           name: 'member',
           type: 'line',
-          stack: 'Total',
-          data: [120, 132, 101, 134, 90, 230, 210]//这里放会员的数量
+          symbol: 'none',
         },
         {
           name: 'casual',
           type: 'line',
-          stack: 'Total',
-          data: [220, 182, 191, 234, 290, 330, 310]//这里放散客的数量
+          symbol: 'none',
         }
       ]
     };
   };
   return <div>
+    <br />
   <ReactEcharts option={getOption()} />
 </div>
 }
