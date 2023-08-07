@@ -10,8 +10,6 @@ import ReactECharts from 'echarts-for-react';
 
 import test from 'test.json'
 
-// import Head from 'next/head'
-
 export default function Home() {
   return (
     <>
@@ -22,7 +20,6 @@ export default function Home() {
         {test['name']}
       </div>
       <div className={styles.firstGraph}>
-       这里展示一天之内各小时使用量的波动
        <FirstGraph />
       </div>
 

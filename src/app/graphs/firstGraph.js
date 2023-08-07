@@ -1,35 +1,86 @@
 import React, { useContext } from 'react';
 import ReactEcharts from "echarts-for-react";
-// import { store } from "../store";
-// import arryData from './data.json'
 
 export default function FirstGraph(){
-    // let arry=arryData['arryList'];
-    // console.log(arry);
-    // var arr=arry.map(x => eval(x));
-    // console.log(arr);
     const getOption = () => {
         return {
-            xAxis: {
-                type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            title: {
+                text: '一天之内使用量的波动',//标题
+                subtext: '预留'//副标题
             },
-            yAxis: {
-                type: 'value'
+            tooltip: {
+                trigger: 'axis'//鼠标悬停时显示详细数据
             },
-            series: [{
-                data: [100,200,300,400,100,300,500],
-                type: 'bar',
-                showBackground: true,
-                backgroundStyle: {
-                    color: 'rgba(180, 180, 180, 0.2)'
+            legend: {
+                data: ['member', 'casual']//表头数据种类。注意与series里面的name保持一致
+            },
+            toolbox: {
+                show: true,//显示右上角工具栏
+                feature: {
+                  dataView: { show: true, readOnly: false },//数据预览
+                  magicType: { show: true, type: ['line', 'bar'] },//样式：线状/条形
+                  restore: { show: true },//重新加载：开
+                  saveAsImage: { show: false }//保存为图像：关
                 }
-            }]
+            },
+            calculable: true,
+            xAxis: [
+                {
+                  type: 'category',
+                  // 下面填小时
+                  data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                }
+            ],
+            yAxis: [
+                {
+                  type: 'value'
+                }
+            ],
+            series: [
+                {
+                  color: '#a90000',
+                  name: 'member',
+                  type: 'bar',
+                  //下面填会员人数
+                  data: [
+                    2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+                  ],
+                ////标记顶点。此处被用作标记极值
+                //   markPoint: {
+                //     data: [
+                //       { type: 'max', name: 'Max' },
+                //       { type: 'min', name: 'Min' }
+                //     ]
+                //   },
+                ////在图上显示一条水平线。此处被用作标记平均值
+                //   markLine: {
+                //     data: [{ type: 'average', name: 'Avg' }]
+                //   }
+                },
+
+                {
+                  name: 'casual',
+                  type: 'bar',
+                  //下面填散客人数
+                  data: [
+                    2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+                  ],
+                //   markPoint: {
+                //     data: [
+                //       { name: 'Max', value: 182.2, xAxis: 7, yAxis: 183 },
+                //       { name: 'Min', value: 2.3, xAxis: 11, yAxis: 3 }
+                //     ]
+                //   },
+                //   markLine: {
+                //     data: [{ type: 'average', name: 'Avg' }]
+                //   }
+                }
+            ]
         };
     };
 
     return <div>
-        <ReactEcharts option={getOption()} />;
+        <ReactEcharts option={getOption()} />
     </div>
     
 }
