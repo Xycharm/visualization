@@ -1,0 +1,64 @@
+.main {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  background-color: white;
+}
+
+.demo {
+  border-color:black;
+  border-width:2px;
+  border-style:solid;
+  border-radius: 10px;
+  position:absolute;
+  top:50px;
+  bottom:50px;
+  left:100px;
+  width:250px;
+}
+
+.firstGraph {
+  border-color:black;
+  border-width:2px;
+  border-style:solid;
+  border-radius: 10px;
+  position:absolute;
+  top:50px;
+  height:350px;
+  left:370px;
+  width:600px;
+}
+
+.secondGraph {
+  border-color:black;
+  border-width:2px;
+  border-style:solid;
+  border-radius: 10px;
+  position:absolute;
+  top:420px;
+  left:370px;
+  bottom:50px;
+  width:600px;
+}
+
+.thirdGraph {
+  border-color:black;
+  border-width:2px;
+  border-style:solid;
+  border-radius: 10px;
+  position:absolute;
+  top:50px;
+  left:990px;
+  right:100px;
+  bottom:50px;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
