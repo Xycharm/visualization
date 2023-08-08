@@ -11,6 +11,7 @@
   border-style:solid;
   border-radius: 10px;
   position:absolute;
+  overflow:hidden;
   top:50px;
   bottom:50px;
   left:100px;
@@ -23,6 +24,7 @@
   border-style:solid;
   border-radius: 10px;
   position:absolute;
+  overflow:hidden;
   top:50px;
   height:350px;
   left:370px;
@@ -35,6 +37,7 @@
   border-style:solid;
   border-radius: 10px;
   position:absolute;
+  overflow:hidden;
   top:420px;
   left:370px;
   bottom:50px;
@@ -47,6 +50,7 @@
   border-style:solid;
   border-radius: 10px;
   position:absolute;
+  overflow:hidden;
   top:50px;
   left:1040px;
   right:100px;

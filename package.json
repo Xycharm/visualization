@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@uiw/react-baidu-map": "^2.6.1",
     "echarts": "^5.4.3",
     "echarts-for-react": "^3.0.2",
     "next": "13.4.12",
