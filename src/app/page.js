@@ -4,11 +4,10 @@ import styles from './page.module.css'
 import FirstGraph from './graphs/firstGraph'
 import SecondGraph from './graphs/secondGraph'
 import ThirdGraph from './graphs/thirdGraph'
+import ExcelReader from './ExcelReader'
 
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
-
-import test from 'test.json'
 
 export default function Home() {
   return (
@@ -17,7 +16,8 @@ export default function Home() {
       <div className={styles.demo}>
         这里展示标题、文字说明以及被选中的点的详细数据
         <br />
-        {test['name']}
+        开发者工具：xlsx-json转换器
+        <ExcelReader name='thirdGraphData6'/>
       </div>
       <div className={styles.firstGraph}>
        <FirstGraph />

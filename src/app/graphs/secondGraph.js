@@ -12,12 +12,12 @@ export default function SecondGraph(){
         trigger: 'axis'
       },
       legend: {
-        data: ['member', 'casual']
+        data: ['会员', '散客']
       },
       grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
+        left: '2%',
+        right: '5%',
+        bottom: '0px',
         containLabel: true
       },
       toolbox: {
@@ -30,7 +30,7 @@ export default function SecondGraph(){
         }
       },
       dataset:{
-        dimensions:['time','member','casual'],
+        dimensions:['骑行时长-分','会员','散客'],
         source:Data
       },
       xAxis: {
@@ -42,12 +42,12 @@ export default function SecondGraph(){
       },
       series: [
         {
-          name: 'member',
+          name: '会员',
           type: 'line',
           symbol: 'none',
         },
         {
-          name: 'casual',
+          name: '散客',
           type: 'line',
           symbol: 'none',
         }

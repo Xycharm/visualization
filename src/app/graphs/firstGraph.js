@@ -7,13 +7,13 @@ export default function FirstGraph(){
         return {
             title: {
                 text: '一天之内使用量的波动',//标题
-                subtext: '预留'//副标题
+                subtext: '  人次/月'//副标题
             },
             tooltip: {
                 trigger: 'axis'//鼠标悬停时显示详细数据
             },
             legend: {
-                data: ['member', 'casual']//表头数据种类。注意与series里面的name保持一致
+                data: ['会员', '散客']//表头数据种类。注意与series里面的name保持一致
             },
             toolbox: {
                 show: true,//显示右上角工具栏
@@ -24,8 +24,15 @@ export default function FirstGraph(){
                   saveAsImage: { show: false }//保存为图像：关
                 }
             },
+            grid:{
+                top:'20%',
+                bottom:'0%',
+                left:'2%',
+                right:'5%',
+                containLabel: true
+            },
             dataset:{
-                dimensions:['time','member','casual'],
+                dimensions:['起始时间-时','会员','散客'],
                 source:Data
             },
             xAxis: [
@@ -41,11 +48,11 @@ export default function FirstGraph(){
             series: [
                 {
                   color: '#a90000',
-                  name: 'member',
+                  name: '会员',
                   type: 'bar',
                 },
                 {
-                    name: 'casual',
+                    name: '散客',
                   type: 'bar',
                 },
             ]
