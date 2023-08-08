@@ -2,29 +2,51 @@
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  background-color: white;
+  background-color: rgba(255,255,255,0.7);
 }
 
 .demo {
-  border-color:black;
-  border-width:2px;
-  border-style:solid;
+  border-width:0px;
   border-radius: 10px;
   position:absolute;
   overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
   top:50px;
-  bottom:50px;
+  bottom:170px;
   left:100px;
   width:250px;
 }
 
-.firstGraph {
-  border-color:black;
-  border-width:2px;
-  border-style:solid;
+.developer{
+  border-width:0px;
   border-radius: 10px;
   position:absolute;
   overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
+  bottom:50px;
+  left:100px;
+  width:250px;
+  height:100px;
+}
+
+.firstGraph {
+  border-width:0px;
+  border-radius: 10px;
+  position:absolute;
+  overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
   top:50px;
   height:350px;
   left:370px;
@@ -32,12 +54,15 @@
 }
 
 .secondGraph {
-  border-color:black;
-  border-width:2px;
-  border-style:solid;
+  border-width:0px;
   border-radius: 10px;
   position:absolute;
   overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
   top:420px;
   left:370px;
   bottom:50px;
@@ -45,12 +70,15 @@
 }
 
 .thirdGraph {
-  border-color:black;
-  border-width:2px;
-  border-style:solid;
+  border-width:0px;
   border-radius: 10px;
   position:absolute;
   overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
   top:50px;
   left:1040px;
   right:100px;
