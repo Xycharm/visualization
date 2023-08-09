@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer,LayerGroup,Circle,Tooltip } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import Data1 from './thirdGraphData1.json'
 
+const Data=Data1;
 //跟据净流入设计颜色
 function GetColor( sum ){
   let color;
@@ -26,14 +28,21 @@ function GetColor( sum ){
 }
 
 const MetaCircle=(props)=>{
+  console.log("Hello!");
   return <Circle
-  center={props.center}
-  pathOptions={{fillColor :GetColor(props.sum),fillOpacity:0.8} }
+  center={[props.arr.lat,props.arr.lon]}
+  pathOptions={{fillColor :GetColor(props.arr.sum),fillOpacity:0.8} }
   radius={500}
   stroke={false}
 >
-  <Tooltip><p>id:{props.id}<br/>净流入：{props.sum}</p></Tooltip>
+  <Tooltip><p>id:{props.arr.id}<br/>净流入：{props.arr.sum}</p></Tooltip>
 </Circle>
+}
+
+const AllCircles=()=>{
+  return (
+    Data.map((item)=><MetaCircle arr={item}/>)
+  );
 }
 
 const center=[41.8755, -87.624];
@@ -41,7 +50,7 @@ const Map = () => {
   return (
     <MapContainer 
       center={center} //地图中心位置
-      zoom={9} //地图大小
+      zoom={10} //地图大小
       scrollWheelZoom={true} 
       style={{height: '80%', width: "100%"}}
     >
@@ -50,7 +59,7 @@ const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <LayerGroup>
-        <MetaCircle center={center} sum={250} id={1} />
+        <AllCircles />
       </LayerGroup>
     </MapContainer>
   )
