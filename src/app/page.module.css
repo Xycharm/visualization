@@ -5,7 +5,7 @@
   background-color: rgba(255,255,255,0.7);
 }
 
-.demo {
+.title{
   border-width:0px;
   border-radius: 10px;
   position:absolute;
@@ -16,6 +16,22 @@
   box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
 
   top:50px;
+  left:100px;
+  width:250px;
+  height:200px;
+}
+
+.demo {
+  border-width:0px;
+  border-radius: 10px;
+  position:absolute;
+  overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
+  top:270px;
   bottom:170px;
   left:100px;
   width:250px;

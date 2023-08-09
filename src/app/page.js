@@ -5,6 +5,7 @@ import FirstGraph from './graphs/firstGraph'
 import SecondGraph from './graphs/secondGraph'
 import ThirdGraph from './graphs/thirdGraph'
 import ExcelReader from './ExcelReader'
+import Title from './title'
 
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
@@ -13,12 +14,17 @@ export default function Home() {
   return (
     <>
     <main className={styles.main}>
+      <div className={styles.title}>
+        {/* 这里展示标题、文字说明以及被选中的点的详细数据 */}
+        <Title />
+      </div>
       <div className={styles.demo}>
-        这里展示标题、文字说明以及被选中的点的详细数据
-
+        <h6>Details:</h6>
+        Dataset Origin: <a href='https://divvybikes.com/system-data'>Divvy Data</a>
+        
       </div>
       <div className={styles.developer}>
-        开发者工具：xlsx-json转换器
+        Develper's Tool：<br />xlsx-json Transformer
         <ExcelReader name='thirdGraphData6'/>
       </div>
       <div className={styles.firstGraph}>
@@ -30,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className={styles.thirdGraph}>
-        这里结合地图展示某日某时段车辆的流动情况
+        <h3><br />全城车辆流动情况</h3>{/*注意此处的CSS在title.css中*/}
         <ThirdGraph />
       </div>
     </main>
