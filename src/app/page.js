@@ -20,7 +20,8 @@ export default function Home() {
       </div>
       <div className={styles.demo}>
         <h6>Details:</h6>
-        Dataset Origin: <a href='https://divvybikes.com/system-data'>Divvy Data</a>
+        Dataset Origin: <a href='https://divvybikes.com/system-data'>Divvy Data</a><br />
+        GitHub Site: <a href='https://github.com/xycharm/visualization/'>Here</a>
         
       </div>
       <div className={styles.developer}>

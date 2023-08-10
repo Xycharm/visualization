@@ -38,4 +38,23 @@ h4{
 }
 h3{
     color:'#303030';
-  }
+}
+
+h6{
+    font-size:18px;
+    line-height:1.5em;
+}
+
+a:link{
+    color:#00BFFF;
+}
+a:visited{
+    color:#912CEE;
+    text-decoration:underline;
+}
+a:hover{
+    text-decoration:underline;
+}
+a:active{
+    color:#FF0000;
+}

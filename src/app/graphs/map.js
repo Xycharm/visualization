@@ -1,20 +1,46 @@
-import { MapContainer, TileLayer,LayerGroup,Circle,Tooltip } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
-import Data1 from './thirdGraphData1.json'
+import {useState} from 'react';
+import { MapContainer, TileLayer,LayerGroup,Circle,Tooltip } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import Data1 from './thirdGraphData1.json';
+import Data2 from './thirdGraphData2.json';
+import Data3 from './thirdGraphData3.json';
+import Data4 from './thirdGraphData4.json';
+import Data5 from './thirdGraphData5.json';
+import Data6 from './thirdGraphData6.json';
 
-const Data=Data1;
+
+let Data=Data1;
 //跟据净流入设计颜色
 
- function GetColor(sum) {
-      if (Math.abs(sum) > 200) {
-        sum = sum > 0 ? 200 : -200;
-      }
-      sum = Math.round((sum * 255) / 200);
-      if (sum < 0) {
-        return "rgb(" + (255 + sum) + ",255,255)";
-     } else return "rgb(" + sum + ",0,0)";
-   }
+function GetColor(sum) {
+   if (Math.abs(sum) > 200) {
+    sum = sum > 0 ? 200 : -200;
+   }
+   sum = Math.round((sum * 255) / 200);
+   if (sum < 0) {
+    return "rgb(" + (255 + sum) + ",255,255)";
+  } else return "rgb(" + sum + ",0,0)";
+}
 
+function ChangeImport(value){
+  switch(value){
+    case 1:Data=Data1;break;
+    case 2:Data=Data2;break;
+    case 3:Data=Data3;break;
+    case 4:Data=Data4;break;
+    case 5:Data=Data5;break;
+    case 6:Data=Data6;break;
+  };
+}
+
+function GetTime(value){
+  let time1=4*value-4;
+  let time2=4*value-1;
+  time1=String(time1);
+  time2=String(time2);
+  let text=time1+':00 - '+time2+':59';
+  return text;
+}
 const MetaCircle=(props)=>{
   console.log("Hello!");
   return <Circle
@@ -34,8 +60,56 @@ const AllCircles=()=>{
 }
 
 const center=[41.90, -87.624];
+
+const leftStyle={
+  marginLeft:'50px',
+  marginTop:'10px',
+  backgroundColor:'#FFFFFF',
+  color:'#00FFFF',
+  float:'left',
+  fontSize:'40px',
+  width:'40px',
+  height:'40px',
+  borderWidth:'1px',
+  borderRadius: '4px',
+  cursor: 'pointer',
+};
+
+const rightStyle={
+  marginTop:'10px',
+  backgroundColor:'#FFFFFF',
+  color:'#00FFFF',
+  float:'left',
+  fontSize:'40px',
+  width:'40px',
+  height:'40px',
+  borderWidth:'1px',
+  borderRadius: '4px',
+  cursor: 'pointer',
+};
+const textStyle={
+  textAlign:'center',
+  float:'left',
+  marginTop:'18px',
+  marginLeft:'30px',
+  marginRight:'30px',
+  fontSize:'20px',
+}
 const Map = () => {
+  const [value,setValue]=useState(1);
+
+  function handleDecrease(){
+    value==1?setValue(6):setValue(value-1);
+    ChangeImport(value);
+  }
+  function handleIncrease(){
+    value==6?setValue(1):setValue(value+1);
+    ChangeImport(value);
+  }
+
+  ChangeImport(value);
   return (
+    <>
     <MapContainer 
       center={center} //地图中心位置
       zoom={11} //地图大小
@@ -50,6 +124,10 @@ const Map = () => {
         <AllCircles />
       </LayerGroup>
     </MapContainer>
+    <button style={leftStyle} onClick={handleDecrease}>&#60;</button>
+    <h7 style={textStyle} >{GetTime(value)}</h7>
+    <button style={rightStyle} onClick={handleIncrease}> &#62; </button>
+    </>
   )
 }
 
