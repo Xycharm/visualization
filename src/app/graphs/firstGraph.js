@@ -54,7 +54,7 @@ export default function FirstGraph() {
         values={["会员", "散客"]}
         titleText={"当天使用量的波动"}
         subTitle={"人次"}
-        date={date}
+        date={date - 1}
       />
     </div>
   );
