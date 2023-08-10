@@ -11,20 +11,24 @@ function GetColor(sum) {
     let normalizedSum = sum / 348;
     //use function
     let color;
-    let power = 1/3;
+    let power = 1/5;
     if (normalizedSum > 0) {
         color = Math.pow(normalizedSum, power);
     }
     else {
         color = -Math.pow(-normalizedSum, power);
     }
-    //use 0.5 as the center of the color scale
-    //then map [-1,1] to a degree of [0, 1]
-    let degree = (color + 1) / 2;
-    //the degree means variation from white to orange, the larger the degree, the more orange, and map it to [0, 255]
-    let r = 255 * degree;
-    let g = 255 * degree;
-    let b = 255 * degree;
+    let r, g, b;
+    if (color > 0) {
+        r = 255;
+        g = 255 - Math.round(255 * color);
+        b = 255 - Math.round(255 * color);
+    }
+    else {
+        r = 255 + Math.round(255 * color);
+        g = 255 + Math.round(255 * color);
+        b = 255;
+    }
     return "rgb(" + r + "," + g + "," + b + ")";
 }
 
