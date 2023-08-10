@@ -8,8 +8,8 @@ import ExcelReader from "./components/ExcelReader";
 import Title from "./title";
 
 export default function Home() {
-  const [date, setDate] = useState(0);
-  let secondGraphStyle=(date===0)?secondGraphStyle1:secondGraphStyle2;
+  const [date, setDate] = useState(-1);
+  let secondGraphStyle=(date<0)?secondGraphStyle1:secondGraphStyle2;
   return (
     <>
       <main className={styles.main}>
@@ -24,6 +24,13 @@ export default function Home() {
           <br />
           GitHub Site:{" "}
           <a href="https://github.com/xycharm/visualization/">Here</a>
+          <br />
+          <br />
+          Program 2 by Group 10 of <br />
+          Lesson "Data Visualization"<br />
+          of Zhejiang University<br/>
+          in Summer, 2023
+
         </div>
         <div className={styles.developer}>
           Develper's Tool:

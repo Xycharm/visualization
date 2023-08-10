@@ -1,36 +1,27 @@
-# Visualization
+# 2023年浙江大学暑假短学期“大数据可视化”课程大作业
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+这是一个 [Next.js](https://nextjs.org/) 项目使用[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)辅助程序。
 
-## Getting Started
+## 安装所需配置
 
-First, run the development server:
+在终端中切换到该项目所在visualization文件夹；
+
+输入如下命令，安装所需配置：
+
+```bash
+npm install
+```
+
+## 在本地运行
+
+输入如下命令，运行本地服务器：
 
 ```bash
 npm run dev
-# or
+# 或
 yarn dev
-# or
+# 或
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+在浏览器中打开网址 [http://localhost:3000](http://localhost:3000) 以查看结果。

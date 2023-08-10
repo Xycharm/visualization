@@ -69,23 +69,7 @@
   top:50px;
   left:370px;
   width:750px;
-  /* height:400px; */
 }
-
-/* .secondGraph {
-  border-width:0px;
-  border-radius: 10px;
-  position:absolute;
-  overflow:hidden;
-
-  background-color:rgba(255,255,255,1);
-  padding:10px;
-  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
-
-  top :710px;
-  left:370px;
-  width:650px;
-} */
 
 .thirdGraph {
   border-width:0px;
