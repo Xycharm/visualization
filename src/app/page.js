@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from "react";
 import styles from "./page.module.css";
 import FirstGraph from "./graphs/firstGraph";
 import SecondGraph from "./graphs/secondGraph";
@@ -7,9 +7,9 @@ import ThirdGraph from "./graphs/thirdGraph";
 import ExcelReader from "./components/ExcelReader";
 import Title from "./title";
 
-import React from "react";
-
 export default function Home() {
+  const [date, setDate] = useState(0);
+  let secondGraphStyle=(date===0)?secondGraphStyle1:secondGraphStyle2;
   return (
     <>
       <main className={styles.main}>
@@ -32,10 +32,10 @@ export default function Home() {
           <ExcelReader name="thirdGraphData6" />
         </div>
         <div className={styles.firstGraph}>
-          <FirstGraph />
+          <FirstGraph date={date} setDate={setDate}/>
         </div>
 
-        <div className={styles.secondGraph}>
+        <div style={secondGraphStyle}>
           <SecondGraph />
         </div>
 
@@ -50,4 +50,35 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+const secondGraphStyle1={
+  borderWidth:'0px',
+  borderRadius: '10px',
+  position:'absolute',
+  overflow:'hidden',
+
+  backgroundColor:'rgba(255,255,255,1)',
+  padding:'10px',
+  boxShadow:"0px 5px 15px 0px rgba(0,0,0,0.3)",
+
+  top :'415px',
+  left:'370px',
+  width:'650px',
+  bottom:'50px',
+}
+
+const secondGraphStyle2={
+  borderWidth:'0px',
+  borderRadius: '10px',
+  position:'absolute',
+  overflow:'hidden',
+
+  backgroundColor:'rgba(255,255,255,1)',
+  padding:'10px',
+  boxShadow:"0px 5px 15px 0px rgba(0,0,0,0.3)",
+
+  top :'710px',
+  left:'370px',
+  width:'650px',
 }

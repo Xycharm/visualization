@@ -5,9 +5,9 @@ import Histogram from "../components/histogram";
 import SubHistogram from "../components/subhistogram";
 import MainData from "../dataset/mainGraphData.json";
 
-export default function FirstGraph() {
+export default function FirstGraph({date,setDate}) {
   const [visible, setVisible] = useState(true); // State to toggle between oneday and everyday graphs
-  const [date, setDate] = useState(0);
+  
   const buttonStyle = {
     backgroundColor: "#409eff",
     color: "white",
@@ -27,11 +27,15 @@ export default function FirstGraph() {
   function subGraph(param) {
     setDate(param["日期"]);
   }
-  const buttonText = visible ? "Everyday" : "Oneday";
+  function onClick(){
+    if(visible==false)setDate(0);
+    return setVisible(!visible);
+  }
+  const buttonText = visible ? "Oneday" : "Everyday" ;
   return (
     <div>
       <div style={containerStyle}>
-        <button style={buttonStyle} onClick={() => setVisible(!visible)}>
+        <button style={buttonStyle} onClick={onClick}>
           Toggle Graph ({buttonText})
         </button>
       </div>
@@ -42,9 +46,9 @@ export default function FirstGraph() {
         }
         values={["会员", "散客"]}
         titleText={
-          visible ? "一个月不同时间的使用量的波动" : "每天使用量的波动"
+          visible ? "日内使用量的波动" : "月内使用量的波动" 
         }
-        subTitle={visible ? "人次/月" : "人次/天"}
+        subTitle={visible ? "人次/时" : "人次/天"}
         isMain={!visible}
         subGraph={subGraph}
       />
