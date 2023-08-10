@@ -9,7 +9,7 @@ export default function SubHistogram({
   subTitle,
   date,
 }) {
-  if (date == -1) return;
+  if (date == 0) return;
 
   var dataset = mainDataset[date.toString()];
   console.log(dataset);
