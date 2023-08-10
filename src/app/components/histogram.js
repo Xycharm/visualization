@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import ReactEcharts from "echarts-for-react";
-import Data1 from "../dataset/firstGraphData_oneday.json";
-import Data2 from "../dataset/firstGraphDataII_everyday.json";
 
-export default function FirstGraph({
+export default function Histogram({
   dataset,
   dimensions,
   values,
   titleText,
   subTitle,
+  isMain = false,
+  subGraph = null,
 }) {
+  if (dataset == null || values == null || dimensions == null) return;
   // State to toggle between oneday and everyday graphs
-  var series = dataset.value.map((item) => {
+  var series = values.map((item) => {
     return { name: item, type: "bar" };
   });
   const getGraphOption = () => {
@@ -57,6 +58,8 @@ export default function FirstGraph({
         },
       ],
       series: series,
+      animationDuration: 1000, //这里两个动画设置可以让图表更顺滑
+      animationEasing: "cubicInOut",
     };
   };
 
@@ -64,22 +67,21 @@ export default function FirstGraph({
 
   function onChartClick(param, echarts) {
     console.log(param);
-    console.log(echarts);
+    if (subGraph == null) return;
+    subGraph(param["data"]);
   }
 
-  function onChartLegendselectchanged(param, echarts) {
-    console.log(param);
-    console.log(2);
-  }
+  function onChartLegendselectchanged(param, echarts) {}
   return (
     <>
       <ReactEcharts
         option={getGraphOption()}
         onChartReady={onChartReady}
         onEvents={{
-          click: onChartClick,
+          click: isMain ? onChartClick : null,
           legendselectchanged: onChartLegendselectchanged,
         }}
+        notMerge={false}
       />
     </>
   );

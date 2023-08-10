@@ -8,7 +8,6 @@ import ExcelReader from "./components/ExcelReader";
 import Title from "./title";
 
 import React from "react";
-import ReactECharts from "echarts-for-react";
 
 export default function Home() {
   return (
@@ -27,7 +26,7 @@ export default function Home() {
           <a href="https://github.com/xycharm/visualization/">Here</a>
         </div>
         <div className={styles.developer}>
-          Develper's Tool：
+          Develper's Tool:
           <br />
           xlsx-json Transformer
           <ExcelReader name="thirdGraphData6" />
