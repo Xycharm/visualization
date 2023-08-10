@@ -60,7 +60,7 @@ const secondGraphStyle1={
 
   top :'415px',
   left:'370px',
-  width:'650px',
+  width:'750px',
   bottom:'50px',
 }
 
@@ -76,5 +76,5 @@ const secondGraphStyle2={
 
   top :'710px',
   left:'370px',
-  width:'650px',
+  width:'750px',
 }
