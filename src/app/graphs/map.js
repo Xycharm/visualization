@@ -13,14 +13,30 @@ let Data=Data1;
 //跟据净流入设计颜色
 
 function GetColor(sum) {
-   if (Math.abs(sum) > 200) {
-    sum = sum > 0 ? 200 : -200;
-   }
-   sum = Math.round((sum * 255) / 200);
-   if (sum < 0) {
-    return "rgb(" + (255 + sum) + ",255,255)";
-  } else return "rgb(" + sum + ",0,0)";
-}
+  //the sum is range from -348 to 324, first normalize it to -1 to 1
+      let normalizedSum = sum / 348;
+      //use function
+      let color;
+      let power = 1/5;
+      if (normalizedSum > 0) {
+          color = Math.pow(normalizedSum, power);
+      }
+      else {
+          color = -Math.pow(-normalizedSum, power);
+      }
+      let r, g, b;
+      if (color > 0) {
+          r = 255;
+          g = 255 - Math.round(255 * color);
+          b = 255 - Math.round(255 * color);
+      }
+      else {
+          r = 255 + Math.round(255 * color);
+          g = 255 + Math.round(255 * color);
+          b = 255;
+      }
+      return "rgb(" + r + "," + g + "," + b + ")";
+  }
 
 function ChangeImport(value){
   switch(value){
@@ -53,10 +69,10 @@ const MetaCircle=(props)=>{
 </Circle>
 }
 
-const AllCircles=()=>{
-  return (
-    Data.map((item)=><MetaCircle arr={item}/>)
-  );
+const AllCircles = () => {
+    return (
+        Data.map((item) => <MetaCircle arr={item}/>)
+    );
 }
 
 const center=[41.90, -87.624];
