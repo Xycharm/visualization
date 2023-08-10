@@ -2,7 +2,7 @@
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0);
 }
 
 .title{
@@ -19,6 +19,7 @@
   left:100px;
   width:250px;
   height:200px;
+  position:fixed;
 }
 
 .demo {
@@ -35,6 +36,7 @@
   bottom:170px;
   left:100px;
   width:250px;
+  position:fixed;
 }
 
 .developer{
@@ -51,6 +53,7 @@
   left:100px;
   width:250px;
   height:100px;
+  position:fixed;
 }
 
 .firstGraph {
@@ -65,7 +68,8 @@
 
   top:50px;
   left:370px;
-  width:650px;
+  width:750px;
+  height:400px;
 }
 
 .secondGraph {
@@ -78,9 +82,11 @@
   padding:10px;
   box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
 
-  top :700px;
+  top :890px;
   left:370px;
-  width:650px;
+  width:750px;
+  bottom:50px;
+  height:400px;
 }
 
 .thirdGraph {
@@ -94,11 +100,27 @@
   box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
 
   top:50px;
-  left:1040px;
+  left:1140px;
   right:100px;
   bottom:50px;
+  position:fixed;
 }
 
+.detail{
+  border-width:0px;
+  border-radius: 10px;
+  position:absolute;
+  overflow:hidden;
+
+  background-color:rgba(255,255,255,1);
+  padding:10px;
+  box-shadow:0px 5px 15px 0px rgba(0,0,0,0.3);
+
+  top:470px;
+  left:370px;
+  width:750px;
+  height:400px;
+}
 
 @keyframes rotate {
   from {
