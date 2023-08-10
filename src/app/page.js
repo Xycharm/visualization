@@ -39,15 +39,11 @@ export default function Home() {
           <SecondGraph />
         </div>
 
-        <div className={styles.thirdGraph}>
-          <h3>
-            <br />
-            全城车辆流动情况
-          </h3>
-          {/*注意此处的CSS在title.css中*/}
-          <ThirdGraph />
-        </div>
-      </main>
+      <div className={styles.thirdGraph}>
+        <h3><br />全城车辆流动情况</h3>{/*注意此处的CSS在title.css中*/}
+        <ThirdGraph />
+      </div>
+    </main>
     </>
   );
 }

@@ -58,8 +58,8 @@ export default function Histogram({
         },
       ],
       series: series,
-      animationEasing: "elasticOut",
-      animationDelay: 0,
+      animationDuration: 1000, //这里两个动画设置可以让图表更顺滑
+      animationEasing: "cubicInOut",
     };
   };
 
@@ -81,6 +81,7 @@ export default function Histogram({
           click: isMain ? onChartClick : null,
           legendselectchanged: onChartLegendselectchanged,
         }}
+        notMerge={false}
       />
     </>
   );
